@@ -15,6 +15,7 @@ local cycles_done = 0
 local drum_timer = 0
 local drum_period = 1000  -- cycles per drum revolution
 
+local stepping = 10
 while true do
 --for cy = 1, 3 do
 	local t = socket.gettime()
@@ -36,8 +37,8 @@ while true do
 
 	-- STEPPING CYCLE
 	if to_run > 0 then
-		if to_run > 10000 then
-			to_run = 10000
+		if to_run > stepping then
+			to_run = stepping
 		end
 
 		kbd_input.check_keyboard_input() 
