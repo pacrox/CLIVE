@@ -13,5 +13,6 @@ RUN apt-get update \
      liblua5.3-dev \
      luarocks \
      vim \
+     byobu \
      tmux
 
