@@ -12,11 +12,11 @@ M.prn_shiftr2 = mem.i4003()
 M.prn_shiftr1[14](prn_shiftr2)
 
 -- Carica tutte le ROM nell'ordine corretto
-M.rom[13](0x000, "./busicomROM/busicom.l01")
-M.rom[13](0x100, "./busicomROM/busicom.l02") 
-M.rom[13](0x200, "./busicomROM/busicom.l05")
-M.rom[13](0x300, "./busicomROM/busicom.l07")
-M.rom[13](0x400, "./busicomROM/busicom.l11")
+M.rom[13](0x000, "./rom/busicom.l01")
+M.rom[13](0x100, "./rom/busicom.l02") 
+M.rom[13](0x200, "./rom/busicom.l05")
+M.rom[13](0x300, "./rom/busicom.l07")
+M.rom[13](0x400, "./rom/busicom.l11")
 
 -- CPU
 M.bc141PF = cpu.i4004_i1(M.rom, M.ram, M.kbd_shiftr, M.prn_shiftr1)

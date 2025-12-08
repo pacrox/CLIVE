@@ -2,7 +2,7 @@
 -- keyboard_input.lua
 local keyboard = require("keyboard")
 
-local pipe_name = "/tmp/busicom_input"
+local pipe_name = "_busicom_input"
 local pipe_fd = nil
 
 function init_inputOLD()
