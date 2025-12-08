@@ -8,7 +8,7 @@ LABEL dev.containers.features="common"
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends \
 RUN apt-get update \
-     && apt-get -y install \
+     && apt-get install -y --no-install-recommends \
      lua5.3 \
      liblua5.3-dev \
      luarocks \
