@@ -236,7 +236,7 @@ function M.i4002()-- >{
 	return pin
 end-- >}
 
-function M.i4002_array()
+function M.i4002_array()-- >{
 	local i4002_chip = {}
 	for i = 1, 16 do
 		i4002_chip[i] = M.i4002()
@@ -280,7 +280,7 @@ function M.i4002_array()
 	pin[16] = model
 
 	return pin
-end
+end-- >}
 
 -- PINs:
 --   [1] - reset (clears all bits)
@@ -289,7 +289,7 @@ end
 --   [4-13] - parallel output lines (Q1..Q10: lowest Q1 = last in, highest Q10 = first in)
 --   [14] - connect_next(i4003_chip) (optional: chaining with next chip)
 --   [15-16] - unused
-function M.i4003()
+function M.i4003()-- >{
 	local sr = {0,0,0,0,0,0,0,0,0,0}	-- 10-bit shift register, sr[1]=Q10 (first in), sr[10]=Q1 (last in)
 	local serial_in = 0	-- input bit for next clock
 	local next_chip = nil
