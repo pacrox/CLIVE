@@ -74,7 +74,7 @@ end-- >}
 
 
 
-function M.i4004_i1(rom, ram, shiftr1, shiftr2)
+function M.i4004_i1(rom, ram, shiftr1, shiftr2)-- >{
 	-- pin = (connection pins)
 	-- 	16 pins allocated
 	local pin = {}		-- control pins
@@ -120,12 +120,12 @@ function M.i4004_i1(rom, ram, shiftr1, shiftr2)
 	end-- >}
 
 	local shiftr1 = shiftr1
-	pin[13] = function(addr_space)	-- WIRE SHIFT REGISTER 1
+	pin[13] = function(addr_space)		-- WIRE SHIFT REGISTER 1
 		shiftr1 = addr_space or shiftr1
 		return shiftr1
 	end
 	local shiftr2 = shiftr2
-	pin[12] = function(addr_space)	-- WIRE SHIFT REGISTER 2
+	pin[12] = function(addr_space)		-- WIRE SHIFT REGISTER 2
 		shiftr2 = addr_space or shiftr2
 		return shiftr2
 	end
@@ -135,8 +135,8 @@ function M.i4004_i1(rom, ram, shiftr1, shiftr2)
 
 	-- pin[3] = TEST PIN control (printer drum simulation)
 	pin[3] = function(value)
-		flag[2] = value or flag[2]   -- set test pin
-		return flag[2]     -- read test pin
+		flag[2] = value or flag[2]	-- set test pin
+		return flag[2]			-- read test pin
 	end
 
 	-- STEPPER
@@ -1664,7 +1664,7 @@ function M.i4004_i1(rom, ram, shiftr1, shiftr2)
 
 	pin[1]()	-- issue a RESET
 	return pin
-end
+end-- >}
 
 
 return M

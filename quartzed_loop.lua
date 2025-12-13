@@ -25,15 +25,15 @@ while true do
 	local to_run = target_cycles - cycles_done
 
 	-- PRINTER DRUM SPINNING-UP
-    drum_timer = drum_timer + to_run
-    if drum_timer >= drum_period then
-        drum_timer = 0
-        -- Drum sector pulse: active low briefly
-        logic[3](0)  -- set test pin = 0 (inactive sector)
-        -- After a few cycles, back to 1
-    else
-        logic[3](1)  -- set test pin = 1 (active sector)
-    end
+	drum_timer = drum_timer + to_run
+	if drum_timer >= drum_period then
+		drum_timer = 0
+		-- Drum sector pulse: active low briefly
+		logic[3](0)  -- set test pin = 0 (inactive sector)
+		-- After a few cycles, back to 1
+	else
+		logic[3](1)  -- set test pin = 1 (active sector)
+	end
 
 	-- STEPPING CYCLE
 	if to_run > 0 then
