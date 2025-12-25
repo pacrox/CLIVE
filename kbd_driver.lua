@@ -24,7 +24,7 @@ function init_input()
 	end
 end
 
-local pressed 
+local pressed
 function check_keyboard_input()
 	if not pipe_fd then init_input() end
 
