@@ -37,10 +37,9 @@ function check_keyboard_input()
 	local input = pipe_fd:read("*l")
 	if input then
 		local cmd, key = input:match("(%w+)%s+(.+)")
-		if cmd == "KEY" then 
+		if cmd == "KEY" then
 			keyboard.press_key(key)
 			pressed = key
-		--elseif cmd == "RELEASE" then 
 		elseif cmd == "DP" then
 			keyboard.set_dp_switch(tonumber(key))
 		elseif cmd == "ROUND" then
